@@ -34,8 +34,9 @@ public class Vector_aleatorio_int
    * Inicializa la clase, con dimensión y tamaño de los elementos
    * @param ext_dim
    * @param ext_tam 
+   * @return vector
    */
-  public void init (int ext_dim, int ext_tam)
+  public int[] init (int ext_dim, int ext_tam)
     {
       dimension_vector = ext_dim;
       tamano_elemento = ext_tam + 1;
@@ -43,8 +44,9 @@ public class Vector_aleatorio_int
       
       for (i = 0; i < dimension_vector; i++)
         {
-          Random aleatorio = new Random(System.currentTimeMillis());
+          Random aleatorio = new Random();
           vector[i] = aleatorio.nextInt(tamano_elemento);
         }
+      return vector;
     }
 }
